@@ -1,0 +1,12 @@
+﻿{
+  "Name": "OutfitPreview",
+  "Author": "PLDQ",
+  "Version": "1.0.0",
+  "Description": "Preview the outfit effects in Stardew Valley",
+  "UniqueID": "PLDQ.OutfitPreview",
+  "EntryDll": "OutfitPreview.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": [
+    "Github:pldq/OutfitPreview"
+  ]
+}
