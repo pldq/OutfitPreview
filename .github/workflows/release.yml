@@ -57,10 +57,10 @@ jobs:
       - name: Upload to Nexus Mods
         uses: Nexus-Mods/upload-action@main
         env:
-          NEXUSMODS_API_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
-        if: env.NEXUSMODS_API_KEY != ''
+          NEXUSMODS_API_KEY: ${{ secrets.NEXUS_MODS_API_KEY }}
+        if: env.NEXUS_MODS_API_KEY != ''
         with:
-          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          api_key: ${{ secrets.NEXUS_MODS_API_KEY }}
           file_id: ${{ vars.NEXUSMODS_FILE_ID }}
           filename: ${{ steps.find-zip.outputs.path }}
           version: ${{ steps.version.outputs.version }}
