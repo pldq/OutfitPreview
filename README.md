@@ -67,3 +67,11 @@ dotnet build -c Release       # Release
 ## 许可证
 
 本项目仅供个人学习使用。
+
+## 打赏
+
+如果这个模组对你有帮助，欢迎请我喝杯咖啡 ☕
+
+| 支付宝 | 微信 |
+|--------|------|
+| ![支付宝](Docs/images/sponsor/alipay.jpg) | ![微信](Docs/images/sponsor/wechat.png) |

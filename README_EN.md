@@ -67,3 +67,11 @@ Pushing a `v*` tag triggers the CI workflow to build and publish a GitHub Releas
 ## License
 
 This project is for personal learning purposes only.
+
+## Sponsor
+
+If this mod has been helpful to you, consider buying me a coffee ☕
+
+| Alipay | WeChat |
+|--------|--------|
+| ![Alipay](Docs/images/sponsor/alipay.jpg) | ![WeChat](Docs/images/sponsor/wechat.png) |
