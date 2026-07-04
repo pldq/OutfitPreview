@@ -1,7 +1,7 @@
 ﻿{
   "Name": "OutfitPreview",
   "Author": "PLDQ",
-  "Version": "1.0.0",
+  "Version": "%ProjectVersion%",
   "Description": "Preview the outfit effects in Stardew Valley",
   "UniqueID": "PLDQ.OutfitPreview",
   "EntryDll": "OutfitPreview.dll",
