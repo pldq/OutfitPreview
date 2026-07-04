@@ -9,7 +9,7 @@ public class ModEntry : Mod
     
     public override void Entry(IModHelper helper)
     {
-        _outfitItemPreviewHandler = new OutfitItemPreviewHandler(helper);
+        _outfitItemPreviewHandler = new OutfitItemPreviewHandler(helper, Monitor);
         Monitor.Log("DressUpPreview Mod initialized.", LogLevel.Info);
     }
 }

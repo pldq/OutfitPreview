@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Menus;
 using StardewValley.Objects;
@@ -14,10 +15,13 @@ public class OutfitFarmerPreviewPanel : IDisposable
 
     private Farmer? _farmer;
 
+    private readonly IMonitor _monitor;
+
     private readonly Mutex _mutex = new();
 
-    public OutfitFarmerPreviewPanel()
+    public OutfitFarmerPreviewPanel(IMonitor monitor)
     {
+        _monitor = monitor;
         _farmer ??= Game1.player.CreateFakeEventFarmer();
     }
 
@@ -55,7 +59,10 @@ public class OutfitFarmerPreviewPanel : IDisposable
                         _farmer.hat.Set(hat);
                         break;
                     case Boots boots:
+                        _monitor.Log($"Hovered boots: {boots.DisplayName}");
                         _farmer.boots.Set(boots);
+                        _farmer.changeShoeColor(boots.GetBootsColorString());
+                        _farmer.UpdateClothing();
                         break;
                 }
 

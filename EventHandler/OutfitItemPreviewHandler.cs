@@ -11,13 +11,14 @@ namespace OutfitPreview.EventHandler;
 public class OutfitItemPreviewHandler
 {
     private readonly IModHelper _helper;
-    
+    private readonly IMonitor _monitor;
 
     private OutfitFarmerPreviewPanel? _outfitFarmerPreviewPanel;
 
-    public OutfitItemPreviewHandler(IModHelper helper)
+    public OutfitItemPreviewHandler(IModHelper helper, IMonitor monitor)
     {
         _helper = helper;
+        _monitor = monitor;
 
         helper.Events.Display.RenderedActiveMenu += OnRenderedActiveMenu;
         helper.Events.Display.MenuChanged += OnMenuChanged;
@@ -58,7 +59,7 @@ public class OutfitItemPreviewHandler
     {
         var hoveredItem = CastItem2Outfit(GetHoveredItemFromActiveMenu());
         if (hoveredItem == null) return;
-        _outfitFarmerPreviewPanel ??= new OutfitFarmerPreviewPanel();
+        _outfitFarmerPreviewPanel ??= new OutfitFarmerPreviewPanel(_monitor);
         var position = new Vector2(
             Game1.getMouseX() + 32,
             Game1.getMouseY() + 32 - _outfitFarmerPreviewPanel.PanelHeight - 8
