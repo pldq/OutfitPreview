@@ -4,6 +4,11 @@
 
 星露谷物语模组 — 在菜单中悬停服饰物品时，实时预览角色穿戴效果。
 
+## 下载
+
+- [Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/48637)
+- [GitHub Releases](https://github.com/PLDQ/OutfitPreview/releases)
+
 ## 功能
 
 在以下界面中，将鼠标悬停到服饰物品（帽子、上衣、裤子、鞋子）上，即可在光标旁看到角色穿戴该物品的实时预览，同时显示当前已装备的所有服饰名称：

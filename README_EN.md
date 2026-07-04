@@ -4,6 +4,11 @@
 
 A Stardew Valley mod that renders a live preview of your farmer wearing an outfit item when you hover over it in supported menus.
 
+## Download
+
+- [Nexus Mods](https://www.nexusmods.com/stardewvalley/mods/48637)
+- [GitHub Releases](https://github.com/PLDQ/OutfitPreview/releases)
+
 ## Features
 
 Hover over clothing items (hats, shirts, pants, boots) in the following screens to see a real-time preview of your farmer wearing that item next to your cursor, along with a tooltip listing all currently equipped outfit pieces:
