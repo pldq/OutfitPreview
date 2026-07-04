@@ -46,6 +46,8 @@ dotnet build -c Release       # Release
 
 After a successful build, `Pathoschild.Stardew.ModBuildConfig` automatically copies the output files to `Mods/OutfitPreview/`.
 
+Pushing a `v*` tag triggers the CI workflow to build and publish a GitHub Release (and optionally upload to Nexus Mods if configured).
+
 ## Compatibility
 
 - Stardew Valley 1.6+

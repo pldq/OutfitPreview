@@ -1,0 +1,66 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      attestations: write
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Add build environment
+        uses: Pathoschild/SMAPI-ModBuildWorkflow/add-build-environment@v1
+
+      - name: Add reference assemblies
+        uses: Pathoschild/SMAPI-ModBuildWorkflow/add-reference-assemblies@v1
+
+      - name: Build mod
+        run: dotnet build -c Release
+
+      - name: Upload release artifacts
+        uses: Pathoschild/SMAPI-ModBuildWorkflow/upload-release-artifacts@v1
+        with:
+          create_attestations: true
+
+      - name: Find release zip
+        id: find-zip
+        shell: bash
+        run: |
+          ZIP=$(find _releases -name "*.zip" -type f | head -1)
+          echo "path=$ZIP" >> $GITHUB_OUTPUT
+          echo "name=$(basename "$ZIP")" >> $GITHUB_OUTPUT
+
+      - name: Get version from tag
+        id: version
+        shell: bash
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          VERSION=${TAG#v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: v${{ steps.version.outputs.version }}
+          files: ${{ steps.find-zip.outputs.path }}
+          generate_release_notes: true
+
+      - name: Upload to Nexus Mods
+        uses: Nexus-Mods/upload-action@v1
+        env:
+          NEXUSMODS_API_KEY: ${{ secrets.NEXUSMODS_API_KEY }}
+        if: env.NEXUSMODS_API_KEY != ''
+        with:
+          api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+          file_id: ${{ vars.NEXUSMODS_FILE_ID }}
+          filename: ${{ steps.find-zip.outputs.path }}
+          version: ${{ steps.version.outputs.version }}

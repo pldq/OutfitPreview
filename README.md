@@ -46,6 +46,8 @@ dotnet build -c Release       # Release
 
 构建成功后，`Pathoschild.Stardew.ModBuildConfig` 会自动将输出文件复制到 `Mods/OutfitPreview/`。
 
+推送 `v*` 格式的 tag 会自动触发 CI 构建并发布 GitHub Release（如配置了 secret 可同步上传至 Nexus Mods）。
+
 ## 兼容性
 
 - 星露谷物语 1.6+
