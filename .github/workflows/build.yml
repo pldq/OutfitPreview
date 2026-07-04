@@ -6,6 +6,7 @@ jobs:
     permissions:
       id-token: write
       attestations: write
+      contents: read
     env:
       RELEASE_REF: refs/heads/main
     steps:
