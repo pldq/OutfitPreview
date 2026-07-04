@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutfitPreview", "OutfitPreview.csproj", "{0B3F696E-6E08-4B53-B75A-8CF307C57F62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutfitPreview", "OutfitPreview\OutfitPreview.csproj", "{0B3F696E-6E08-4B53-B75A-8CF307C57F62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
